@@ -1,4 +1,4 @@
-# sndcpy
+# sndcpy (v1.1)
 
 This tool forwards audio from an Android 10 device to the computer. It does not
 require any _root_ access. It works on _GNU/Linux_, _Windows_ and _macOS_.
@@ -8,6 +8,16 @@ The purpose is to enable [audio forwarding][issue14] while mirroring with
 
 [issue14]: https://github.com/Genymobile/scrcpy/issues/14
 [scrcpy]: https://github.com/Genymobile/scrcpy
+
+## Note
+
+This application is a proof-of-concept. But as explained below, many apps are
+restricted and could not forward the audio.
+
+Currently, the best solution to forward audio is to connect the device via
+bluetooth to the computer. It works for all apps, it does not suffer from
+additional limitations and works for basically all devices, contrary to
+_sndcpy_.
 
 
 ## Requirements
@@ -22,16 +32,16 @@ The purpose is to enable [audio forwarding][issue14] while mirroring with
 
 Download the latest release:
 
- - [`sndcpy-v1.0.zip`][release]  
-   _SHA256: 4495f752fc192535cd5208ace4d35d2ba644beb9aabb0e288ae339861ad6782b_
- - [`sndcpy-with-adb-windows-v1.0.zip`][release-adb]  
-   _SHA256: 42b89b7b557b9fdf0c6f3802eac171a0e5610a50a1d615a290ed7f41cba7053d_
+ - [`sndcpy-v1.1.zip`][release]  
+   _SHA256: _b045320ddddbc5a237d6d95213c664f03b2f46ef8bbfcef91c2d95644ed42bbc
+ - [`sndcpy-with-adb-windows-v1.1.zip`][release-adb]  
+   _SHA256: _0b93c846f574df3f38f53eeee44b1a35b863a49465da8f5cd5b1b69a29305901
 
 _On Windows, for simplicity, take the second archive, which also contains
 `adb`._
 
-[release]: https://github.com/rom1v/sndcpy/releases/download/v1.0/sndcpy-v1.0.zip
-[release-adb]: https://github.com/rom1v/sndcpy/releases/download/v1.0/sndcpy-with-adb-windows-v1.0.zip
+[release]: https://github.com/rom1v/sndcpy/releases/download/v1.1/sndcpy-v1.1.zip
+[release-adb]: https://github.com/rom1v/sndcpy/releases/download/v1.1/sndcpy-with-adb-windows-v1.1.zip
 
 Alternatively, you could [build the app][BUILD].
 
@@ -53,14 +63,10 @@ If several devices are connected (listed by `adb devices`):
 
 _(omit `./` on Windows)_
 
-It will install the app on the device, and request permission to start audio
-capture:
+It will install the app on the device and start forwarding audio.
 
-![screenshot](assets/request.png)
-
-Once you clicked on _START NOW_, press _Enter_ in the console to start playing
-on the computer. Press `Ctrl`+`c` in the terminal to stop (except on Windows,
-just disconnect the device or stop capture from the device notifications).
+Press `Ctrl`+`c` in the terminal to stop (except on Windows, just disconnect the
+device or stop capture from the device notifications).
 
 VLC may print this error message once:
 
